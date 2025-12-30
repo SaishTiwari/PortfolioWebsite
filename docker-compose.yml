@@ -1,10 +1,11 @@
+version: '3.8'
+
 services:
   frontend:
     build: ./frontend
-    container_name: portfolio_frontend
-    restart: always
+    container_name: frontend
+    restart: unless-stopped
     ports:
       - "5173:5173"
 
-      
-    
+
