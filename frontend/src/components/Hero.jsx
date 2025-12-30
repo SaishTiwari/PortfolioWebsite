@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import { motion } from 'framer-motion';
-import { MapPin, Github, Linkedin, ChevronDown, Smartphone, Server, Cloud } from 'lucide-react';
+import { MapPin, Github, Linkedin, ChevronDown, Smartphone, Server, Cloud, Download } from 'lucide-react';
 import HeroImage from "../assets/Ai_SaishProfile.jpg";
 
 const Hero = () => {
@@ -17,7 +17,7 @@ const Hero = () => {
   ];
 
   return (
-    <div id="home" className="min-h-screen flex items-center justify-center px-4 py-20">
+    <div id="home" className="min-h-screen flex items-center justify-center px-4 py-20 bg-gray-900">
       {/* Spider-web style particles background */}
       <Particles
         id="tsparticles"
@@ -58,7 +58,7 @@ const Hero = () => {
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
               animate={{ opacity: 1, x: 0 }} 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 mt-8"
             >
               <MapPin size={16} className="text-blue-500" />
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-blue-400">Kathmandu, Nepal</span>
@@ -67,16 +67,16 @@ const Hero = () => {
            <motion.h1
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
-  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-tight leading-snug text-white"
+  className="text-5xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight leading-snug text-white"
 >
-  Hi, Welcome! <br />I'm <span className="text-blue-500">Saish Tiwari</span>
+  Hi, Welcome! <br />I&apos;m <span className="text-blue-500">Saish Tiwari</span>
 </motion.h1>
 
             <motion.p 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl text-gray-400 mb-12 font-light max-w-2xl"
+              className="text-xl md:text-2xl text-gray-400 mb-12 font-light max-w-2xl"
             >
               Software Engineer
             </motion.p>
@@ -105,8 +105,21 @@ const Hero = () => {
               transition={{ delay: 0.7 }}
               className="flex flex-wrap items-center justify-center md:justify-start gap-6"
             >
-              <a href="mailto:tiwarisaish381@gmail.com" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all shadow-2xl shadow-blue-500/20 active:scale-95">
-                Let's Collaborate
+              <a href="/resume.pdf" download className="group relative px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all shadow-2xl shadow-blue-500/20 active:scale-95 flex items-center gap-3 overflow-hidden">
+                <motion.div
+                  initial={{ x: 0 }}
+                  whileHover={{ x: -4 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Download Resume
+                </motion.div>
+                <motion.div
+                  initial={{ x: 0, opacity: 1 }}
+                  whileHover={{ x: 4, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Download size={20} />
+                </motion.div>
               </a>
               <div className="flex gap-4">
                 <a href="https://github.com/SaishTiwari" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Github size={24}/></a>

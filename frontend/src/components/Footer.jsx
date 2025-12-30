@@ -1,5 +1,3 @@
-import { Heart } from 'lucide-react'
-
 const Footer = () => {
   return (
     <footer className="py-8 border-t border-border/50">
@@ -9,8 +7,7 @@ const Footer = () => {
             © 2025 Saish Tiwari. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm flex items-center gap-2">
-            Built with <Heart size={16} className="text-primary fill-primary" /> and code
-          </p>
+\          </p>
         </div>
       </div>
     </footer>

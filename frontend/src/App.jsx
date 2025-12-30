@@ -25,8 +25,9 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen w-full">
       <Navbar />
+      
       <Hero />
       <About />
       <Skills />
@@ -34,6 +35,7 @@ function App() {
       <Education />
       <Projects />
       <Contact />
+      
       <Footer />
     </div>
   );
