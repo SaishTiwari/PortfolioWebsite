@@ -15,7 +15,7 @@ export default defineConfig({
       usePolling: true
     },
     hmr: {
-      host: '16.171.199.235',   // 👈 EC2 PUBLIC IP
+      host: '13.60.43.79',   // 👈 EC2 PUBLIC IP
       protocol: 'ws',
       port: 5173
     }
