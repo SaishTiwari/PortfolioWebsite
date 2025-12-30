@@ -16,8 +16,8 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="min-h-screen bg-gray-900 text-white py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section ref={ref} id="about" className="min-h-screen bg-gray-900 text-white py-20 px-4 flex items-center">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

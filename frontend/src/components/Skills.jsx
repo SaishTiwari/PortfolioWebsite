@@ -198,8 +198,7 @@ const Skills = () => {
   const categories = ['Language', 'Frontend', 'Backend', 'Tools']
 
   return (
-    <div id="skills" className="py-20 px-4">
-      {/* Background gradient */}
+    <section ref={ref} id="skills" className="min-h-screen py-20 px-4 bg-gray-900 text-white relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card-bg/20 to-background" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -374,7 +373,7 @@ const Skills = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

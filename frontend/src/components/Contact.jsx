@@ -56,7 +56,7 @@ const Contact = () => {
   ]
 
   return (
-    <div id="contact" className="min-h-screen py-20 px-4">
+    <div ref={ref} id="contact" className="min-h-screen py-20 px-4">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
