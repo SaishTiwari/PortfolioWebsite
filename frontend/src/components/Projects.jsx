@@ -86,17 +86,17 @@ const Projects = () => {
         </motion.div>
 
         {/* Central Axis Layout */}
-        <div className="relative max-h-[85vh] flex items-center">
-          {/* Central Vertical Line */}
+        <div className="relative max-h-none md:max-h-[85vh] flex items-center">
+          {/* Central Vertical Line - Hidden on mobile */}
           <motion.div
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent origin-top"
+            className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent origin-top"
           />
 
           {/* Grid Container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
             {/* Left Column - Personal Projects */}
             <div className="space-y-4">
               {personalProjects.map((project, index) => (
@@ -145,14 +145,14 @@ const ProjectCard = ({ project, index, side, isInView, isHovered, onHover, onLea
       onMouseLeave={onLeave}
       className="relative group"
     >
-      {/* Horizontal Connector Line */}
+      {/* Horizontal Connector Line - Hidden on mobile */}
       <motion.div
         animate={{
           backgroundColor: isHovered ? project.glowColor : 'rgba(255, 255, 255, 0.1)',
           boxShadow: isHovered ? `0 0 8px ${project.glowColor}, 0 0 16px ${project.glowColor}` : 'none',
         }}
         transition={{ duration: 0.3 }}
-        className={`absolute top-1/2 -translate-y-1/2 w-4 h-[2px] ${
+        className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-[2px] ${
           side === 'left' ? '-right-4' : '-left-4'
         }`}
       />

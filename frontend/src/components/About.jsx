@@ -86,8 +86,8 @@ const About = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Vertical Progress Indicator */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-10">
+      {/* Vertical Progress Indicator - Hidden on mobile */}
+      <div className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 flex-col gap-3 z-10">
         {focusAreas.map((area) => (
           <motion.div
             key={area.id}
@@ -107,27 +107,28 @@ const About = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-8 md:mb-12 lg:mb-20"
         >
-          <span className="text-white/40 font-mono text-xs tracking-[0.5em] uppercase">
+          <span className="text-white/40 font-mono text-xs tracking-[0.3em] sm:tracking-[0.5em] uppercase">
             ENGINEERING FOCUS
           </span>
         </motion.div>
 
         {/* Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
           {/* Left Column - Navigation (40%) */}
           <div className="lg:col-span-2 space-y-8">
             {focusAreas.map((area, index) => (
               <motion.div
                 key={area.id}
                 onHoverStart={() => setActiveArea(area.id)}
+                onClick={() => setActiveArea(area.id)}
                 className="group cursor-pointer"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3 md:gap-6">
                   {/* Horizontal Dash */}
                   <motion.div
                     animate={{
@@ -144,7 +145,7 @@ const About = () => {
                         color: activeArea === area.id ? '#ffffff' : '#ffffff33',
                       }}
                       transition={{ duration: 0.3 }}
-                      className="text-5xl md:text-6xl font-bold tracking-tight leading-none"
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none"
                     >
                       {area.number}
                     </motion.div>
@@ -153,7 +154,7 @@ const About = () => {
                         color: activeArea === area.id ? '#ffffff' : '#ffffff33',
                       }}
                       transition={{ duration: 0.3 }}
-                      className="text-lg md:text-xl font-semibold mt-2 tracking-tight"
+                      className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1 md:mt-2 tracking-tight"
                     >
                       {area.label}
                     </motion.div>
@@ -165,7 +166,7 @@ const About = () => {
 
           {/* Right Column - Detail Area (60%) */}
           <div className="lg:col-span-3 flex items-center">
-            <div className="w-full min-h-[400px] flex flex-col justify-center">
+            <div className="w-full min-h-[200px] md:min-h-[300px] lg:min-h-[400px] flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeArea}
@@ -173,10 +174,10 @@ const About = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="space-y-12"
+                  className="space-y-6 md:space-y-8 lg:space-y-12"
                 >
                   {/* Description */}
-                  <p className="text-2xl md:text-3xl leading-relaxed text-white/90 font-light">
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-white/90 font-light">
                     {activeContent?.description}
                   </p>
 

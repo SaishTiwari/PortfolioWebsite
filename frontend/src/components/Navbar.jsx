@@ -101,17 +101,17 @@ const Navbar = () => {
           {/* Brand */}
           <motion.a
             href="#home"
-            className="text-white font-bold tracking-tight"
+            className="text-white font-bold tracking-tight text-base sm:text-lg md:text-xl lg:text-2xl"
             animate={{
-              fontSize: isScrolled ? '1.25rem' : '1.75rem',
+              fontSize: isScrolled ? ['1.25rem', '1rem'] : ['1.75rem', '1.25rem'],
             }}
             transition={{ duration: 0.3 }}
           >
             SAISH TIWARI
           </motion.a>
 
-          {/* Nav Items */}
-          <div className="flex items-center gap-8">
+          {/* Nav Items - Hidden on small screens, show from md */}
+          <div className="hidden md:flex items-center gap-3 lg:gap-8">
             {navItems.map((item) => (
               <a
                 key={item.id}

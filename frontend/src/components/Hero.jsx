@@ -50,8 +50,8 @@ const Hero = () => {
         className="absolute inset-0"
       />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
           
           {/* Left Column: Content */}
           <div className="flex-[1.6] text-center md:text-left">
@@ -82,7 +82,7 @@ const Hero = () => {
             </motion.p>
 
             {/* Glassmorphic Highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
@@ -103,7 +103,7 @@ const Hero = () => {
               initial={{ opacity: 0 }} 
               animate={{ opacity: 1 }} 
               transition={{ delay: 0.7 }}
-              className="flex flex-wrap items-center justify-center md:justify-start gap-6"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-6"
             >
               <a href="/resume.pdf" download className="group relative px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all shadow-2xl shadow-blue-500/20 active:scale-95 flex items-center gap-3 overflow-hidden">
                 <motion.div
