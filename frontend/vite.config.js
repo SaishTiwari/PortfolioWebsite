@@ -13,6 +13,11 @@ export default defineConfig({
     strictPort: true,
     watch: {
       usePolling: true
+    },
+    hmr: {
+      host: '16.171.199.235',   // 👈 EC2 PUBLIC IP
+      protocol: 'ws',
+      port: 5173
     }
   },
   build: {
