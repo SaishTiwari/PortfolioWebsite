@@ -16,8 +16,8 @@ const About = () => {
   ]
 
   return (
-    <div id="about" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section id="about" className="min-h-screen bg-gray-900 text-white py-20 px-4">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -71,7 +71,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

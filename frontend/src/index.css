@@ -14,16 +14,6 @@
   html {
     scroll-behavior: smooth;
   }
-  
-  /* Hide scrollbar but keep functionality */
-  .snap-y::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .snap-y {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 }
 
 @layer components {

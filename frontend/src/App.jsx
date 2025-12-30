@@ -10,29 +10,15 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white snap-y snap-mandatory overflow-y-scroll h-screen">
+    <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
-      <section className="snap-start snap-always h-screen">
-        <Hero />
-      </section>
-      <section className="snap-start snap-always min-h-screen">
-        <About />
-      </section>
-      <section className="snap-start snap-always min-h-screen">
-        <Skills />
-      </section>
-      <section className="snap-start snap-always min-h-screen">
-        <Experience />
-      </section>
-      <section className="snap-start snap-always min-h-screen">
-        <Education />
-      </section>
-      <section className="snap-start snap-always min-h-screen">
-        <Projects />
-      </section>
-      <section className="snap-start snap-always min-h-screen">
-        <Contact />
-      </section>
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Education />
+      <Projects />
+      <Contact />
       <Footer />
     </div>
   )
