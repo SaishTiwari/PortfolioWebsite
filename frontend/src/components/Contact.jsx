@@ -56,7 +56,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-card-bg/30" ref={ref}>
+    <div id="contact" className="min-h-screen py-20 px-4">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -181,7 +181,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

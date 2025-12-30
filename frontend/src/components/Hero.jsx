@@ -17,8 +17,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] pt-20 md:pt-0">
-      
+    <div id="home" className="min-h-screen flex items-center justify-center px-4 py-20">
       {/* Spider-web style particles background */}
       <Particles
         id="tsparticles"
@@ -149,7 +148,7 @@ const Hero = () => {
           <ChevronDown size={28} className="text-blue-500" />
         </motion.div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

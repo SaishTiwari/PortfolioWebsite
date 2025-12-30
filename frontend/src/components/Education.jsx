@@ -23,7 +23,7 @@ const Education = () => {
   ]
 
   return (
-    <section id="education" className="py-20 md:py-32" ref={ref}>
+    <div id="education" className="py-20 px-4">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -61,7 +61,7 @@ const Education = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

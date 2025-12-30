@@ -14,13 +14,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#contact', label: 'Contact' },
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ]
 
   return (
@@ -40,13 +41,13 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+            {navItems.map((item) => (
+              <li key={item.href}>
                 <a
-                  href={link.href}
+                  href={item.href}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  {link.label}
+                  {item.name}
                 </a>
               </li>
             ))}
@@ -76,14 +77,14 @@ const Navbar = () => {
             className="md:hidden py-4 border-t border-border/50"
           >
             <ul className="space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navItems.map((item) => (
+                <li key={item.href}>
                   <a
-                    href={link.href}
+                    href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block text-gray-300 hover:text-primary transition-colors"
                   >
-                    {link.label}
+                    {item.name}
                   </a>
                 </li>
               ))}

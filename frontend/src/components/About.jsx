@@ -16,7 +16,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-neutral-950 text-white" ref={ref}>
+    <div id="about" className="min-h-screen py-20 px-4">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -71,7 +71,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   )
 }
 

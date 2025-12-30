@@ -32,7 +32,7 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 md:py-32 bg-card-bg/30" ref={ref}>
+    <div id="experience" className="py-20 px-4">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -77,7 +77,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
