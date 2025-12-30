@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy all frontend code
 COPY . .
@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 5173
 
 # Start the Vite frontend
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "dev"]
