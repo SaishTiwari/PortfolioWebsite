@@ -15,7 +15,7 @@ const About = () => {
     {
       id: 'mobile',
       number: '01',
-      label: 'Native Mobile',
+      label: 'Native iOS Applications',
       description: 'Building low-latency iOS experiences with a focus on gesture-driven UI and native performance.',
       techStack: 'Swift • SwiftUI • Combine • UIKit • MVVM',
     },

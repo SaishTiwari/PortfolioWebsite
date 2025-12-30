@@ -128,15 +128,15 @@ const TimelineItem = ({ experience, index, isInView }) => {
           {experience.period}
         </motion.p>
 
-        {/* Tech Icons - Desktop: Vertical Stack, Mobile: Horizontal Scroll */}
-        <div className="flex md:flex-col md:items-end gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-hide">
+        {/* Tech Icons - Grid layout with 2-3 per row */}
+        <div className="flex flex-wrap md:justify-end gap-2">
           {experience.technologies.map((tech, idx) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: index * 0.2 + idx * 0.05 }}
-              className="group/tech flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
+              className="group/tech flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
             >
               {tech.name === 'AWS' ? (
                 <AWSLogo 
