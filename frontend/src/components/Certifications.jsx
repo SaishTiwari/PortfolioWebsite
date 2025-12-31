@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion'
 import { useRef, useState, useCallback } from 'react'
 import Particles from 'react-tsparticles'
 import { loadSlim } from 'tsparticles-slim'
-import { Sparkles, ChevronDown } from 'lucide-react'
+import { Award, CheckCircle2, ExternalLink, ChevronDown } from 'lucide-react'
 
 const AWSLogo = ({ className = "w-6 h-6" }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -11,7 +11,7 @@ const AWSLogo = ({ className = "w-6 h-6" }) => (
   </svg>
 )
 
-const Skills = () => {
+const Certifications = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -19,72 +19,31 @@ const Skills = () => {
     await loadSlim(engine)
   }, [])
 
-  const techStacks = [
+  const certifications = [
     {
-      title: 'Mobile Engineering',
-      description: 'Crafting high-performance, native iOS experiences with a focus on fluid animations and HIG compliance.',
-      technologies: [
-        { name: 'Swift', icon: 'swift', color: '#F05138' },
-        { name: 'SwiftUI', icon: 'swift', color: '#0066FF' },
-        { name: 'UIKit', icon: 'apple', color: '#000000' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-orange-500/20 via-red-500/10 to-transparent'
+      title: 'AWS Certified Solutions Architect – Associate',
+      issuer: 'Amazon Web Services',
+      date: 'June 13, 2025',
+      expirationDate: 'June 13, 2028',
+      validationNumber: '92619079705b4638a8b249ed527750b2',
+      verifyUrl: 'https://aws.amazon.com/verification',
+      logo: 'aws-custom',
+      gradient: 'from-orange-500/20 via-yellow-500/10 to-transparent'
     },
     {
-      title: 'Backend Architecture',
-      description: 'Building scalable, type-safe microservices and RESTful APIs designed for high concurrency.',
-      technologies: [
-        { name: 'Java', icon: 'openjdk', color: '#007396' },
-        { name: 'Spring Boot', icon: 'springboot', color: '#6DB33F' },
-        { name: 'Python', icon: 'python', color: '#3776AB' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-green-500/20 via-emerald-500/10 to-transparent'
-    },
-    {
-      title: 'Data Persistence',
-      description: 'Architecting optimized schemas for both relational integrity and document-based flexibility.',
-      technologies: [
-        { name: 'MySQL', icon: 'mysql', color: '#4479A1' },
-        { name: 'PostgreSQL', icon: 'postgresql', color: '#4169E1' },
-        { name: 'MongoDB', icon: 'mongodb', color: '#47A248' },
-        { name: 'Firestore', icon: 'firebase', color: '#FFCA28' },
-      ],
-      span: 'lg:col-span-6',
+      title: 'CCNAv7: Introduction to Networks',
+      issuer: 'Cisco Networking Academy',
+      date: 'October 06, 2024',
+      logo: 'https://cdn.simpleicons.org/cisco/049CA1',
       gradient: 'from-blue-500/20 via-cyan-500/10 to-transparent'
-    },
-    {
-      title: 'Real-time & Auth',
-      description: 'Leveraging serverless ecosystems for instant synchronization and proactive error monitoring.',
-      technologies: [
-        { name: 'Firebase', icon: 'firebase', color: '#FFCA28' },
-        { name: 'Auth', icon: 'firebase', color: '#FFA000' },
-        { name: 'Crashlytics', icon: 'firebase', color: '#FF6F00' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-yellow-500/20 via-orange-500/10 to-transparent'
-    },
-    {
-      title: 'Cloud & DevOps',
-      description: 'Deploying resilient, containerized environments with automated CI/CD pipelines and infrastructure as code.',
-      technologies: [
-        { name: 'AWS', icon: 'aws-custom', color: '#FF9900' },
-        { name: 'Docker', icon: 'docker', color: '#2496ED' },
-        { name: 'Kubernetes', icon: 'kubernetes', color: '#326CE5' },
-        { name: 'GitHub Actions', icon: 'githubactions', color: '#2088FF' },
-        { name: 'Git', icon: 'git', color: '#F05032' },
-      ],
-      span: 'lg:col-span-12',
-      gradient: 'from-blue-500/20 via-purple-500/10 to-transparent'
     },
   ]
 
   return (
-    <section ref={ref} id="skills" className="relative py-20 px-4 bg-gray-900 text-white overflow-hidden">
+    <section ref={ref} id="certifications" className="relative py-20 px-4 bg-gray-900 text-white overflow-hidden">
       {/* Spider-web style particles background */}
       <Particles
-        id="skills-particles"
+        id="certifications-particles"
         init={particlesInit}
         options={{
           background: { color: { value: 'transparent' } },
@@ -121,21 +80,20 @@ const Skills = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-blue-500 font-mono text-sm tracking-wider flex items-center justify-center gap-2">
-            <Sparkles size={16} />
-            TECH STACK
+            <Award size={16} />
+            CERTIFICATIONS
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Tools & Technologies</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Industry Recognition</h2>
           <p className="text-gray-400 text-lg">
-            My arsenal of languages, frameworks, and tools that I use to build exceptional digital experiences
+            Validated expertise in cloud architecture and network engineering
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 auto-rows-fr">
-          {techStacks.map((stack, index) => (
-            <TechCard 
-              key={stack.title}
-              stack={stack}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {certifications.map((cert, index) => (
+            <CertificationCard 
+              key={cert.title}
+              cert={cert}
               index={index}
               isInView={isInView}
             />
@@ -150,9 +108,9 @@ const Skills = () => {
         transition={{ duration: 0.6, delay: 0.8 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
         onClick={() => {
-          const certificationsSection = document.querySelector('#certifications');
-          if (certificationsSection) {
-            certificationsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const experienceSection = document.querySelector('#experience');
+          if (experienceSection) {
+            experienceSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }}
       >
@@ -164,15 +122,15 @@ const Skills = () => {
   )
 }
 
-const TechCard = ({ stack, index, isInView }) => {
+const CertificationCard = ({ cert, index, isInView }) => {
   const [isHovered, setIsHovered] = useState(false)
   const cardRef = useRef(null)
   
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
   
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [5, -5]), { stiffness: 300, damping: 30 })
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-5, 5]), { stiffness: 300, damping: 30 })
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [3, -3]), { stiffness: 300, damping: 30 })
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-3, 3]), { stiffness: 300, damping: 30 })
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return
@@ -194,7 +152,7 @@ const TechCard = ({ stack, index, isInView }) => {
       ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
@@ -203,57 +161,89 @@ const TechCard = ({ stack, index, isInView }) => {
         rotateY: isHovered ? rotateY : 0,
         transformStyle: 'preserve-3d',
       }}
-      className={`${stack.span} relative group`}
+      className="relative group"
     >
-      <div className="relative h-full bg-[#1c1c1e] backdrop-blur-xl rounded-3xl border border-white/10 p-5 overflow-hidden transition-all duration-300 hover:border-blue-500/50">
+      <div className="relative h-full bg-[#1c1c1e] backdrop-blur-xl rounded-3xl border border-white/10 p-8 overflow-hidden transition-all duration-300 hover:border-blue-500/50">
         {/* Gradient Background */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${stack.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${cert.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
         
-        {/* Magnetic Glow Effect */}
+        {/* Spotlight Effect */}
         <motion.div
           className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            background: 'radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.1), transparent 40%)',
+            background: 'radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.15), transparent 40%)',
           }}
         />
 
         {/* Content */}
         <div className="relative z-10">
-          <h3 className="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">
-            {stack.title}
+          {/* Header with Logo */}
+          <div className="flex items-start justify-between mb-4">
+            {cert.logo === 'aws-custom' ? (
+              <AWSLogo className="w-14 h-14 text-[#FF9900]" />
+            ) : (
+              <img
+                src={cert.logo}
+                alt={cert.issuer}
+                className="w-14 h-14 object-contain"
+              />
+            )}
+            {/* Verified Badge */}
+            <motion.div
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 rounded-full px-3 py-1.5"
+            >
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-green-400 text-sm font-medium">Verified</span>
+            </motion.div>
+          </div>
+
+          {/* Title */}
+          <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-blue-400 transition-colors">
+            {cert.title}
           </h3>
-          <p className="text-gray-400 text-xs leading-relaxed mb-3">
-            {stack.description}
+
+          {/* Issuer */}
+          <p className="text-white/70 text-base font-medium mb-2">
+            {cert.issuer}
           </p>
 
-          {/* Tech Icons */}
-          <div className="flex flex-wrap gap-2">
-            {stack.technologies.map((tech) => (
-              <motion.div
-                key={tech.name}
-                whileHover={{ scale: 1.1, y: -4 }}
-                className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm px-2.5 py-1.5 rounded-lg border border-white/10 hover:border-blue-500/50 transition-colors group/tech"
-              >
-                {tech.icon === 'aws-custom' ? (
-                  <AWSLogo className="w-4 h-4 text-white group-hover/tech:scale-110 transition-transform" />
-                ) : (
-                  <img
-                    src={`https://cdn.simpleicons.org/${tech.icon}`}
-                    alt={tech.name}
-                    className="w-4 h-4 group-hover/tech:scale-110 transition-transform"
-                    style={{ filter: 'brightness(0) invert(1)' }}
-                  />
-                )}
-                <span className="text-xs font-medium text-gray-300 group-hover/tech:text-white transition-colors">
-                  {tech.name}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+          {/* Date */}
+          <p className="text-white/50 text-sm mb-4">
+            Issued: {cert.date}
+            {cert.expirationDate && <span className="block mt-1">Valid until: {cert.expirationDate}</span>}
+          </p>
+
+          {/* Validation Number */}
+          {cert.validationNumber && (
+            <div className="bg-black/30 rounded-xl border border-white/5 p-4 mb-4">
+              <p className="text-white/40 text-xs font-medium mb-2 tracking-wider">VALIDATION NUMBER</p>
+              <p className="text-white/90 text-sm font-mono break-all leading-relaxed">
+                {cert.validationNumber}
+              </p>
+            </div>
+          )}
+
+          {/* Verify Button */}
+          {cert.verifyUrl && (
+            <motion.a
+              href={cert.verifyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-white text-xs font-medium transition-all hover:bg-white hover:text-black group/btn"
+            >
+              <CheckCircle2 size={14} className="group-hover/btn:scale-110 transition-transform" />
+              Verify Certificate
+              <ExternalLink size={11} className="opacity-50" />
+            </motion.a>
+          )}
         </div>
       </div>
     </motion.div>
   )
 }
 
-export default Skills
+export default Certifications

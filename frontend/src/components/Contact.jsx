@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
+import Particles from 'react-tsparticles'
+import { loadSlim } from 'tsparticles-slim'
 import { Mail, Phone, MapPin, Github, Linkedin, FileDown, Instagram, Twitter } from 'lucide-react'
 import emailjs from 'emailjs-com'
 
@@ -13,6 +15,10 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
   const [focusedField, setFocusedField] = useState(null)
+
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine)
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -53,8 +59,39 @@ const Contact = () => {
   ]
 
   return (
-    <div id="contact" className="py-20 px-4 bg-gray-900">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <div id="contact" className="py-20 px-4 bg-gray-900 relative overflow-hidden">
+      {/* Spider-web style particles background */}
+      <Particles
+        id="contact-particles"
+        init={particlesInit}
+        options={{
+          background: { color: { value: 'transparent' } },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: 'repulse' },
+              onClick: { enable: true, mode: 'push' },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 200, duration: 0.4 },
+              push: { quantity: 4 },
+            },
+          },
+          particles: {
+            color: { value: '#3b82f6' },
+            links: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.15, width: 1 },
+            move: { enable: true, speed: 0.8, outModes: { default: 'bounce' } },
+            number: { value: 35, density: { enable: true, area: 800 } },
+            opacity: { value: 0.3 },
+            size: { value: { min: 1, max: 3 } },
+            shape: { type: 'circle' },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0"
+      />
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Call to Action & Contact Details */}

@@ -38,10 +38,10 @@ const Hero = () => {
           },
           particles: {
             color: { value: '#3b82f6' },
-            links: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.3, width: 1 },
+            links: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.15, width: 1 },
             move: { enable: true, speed: 0.8, outModes: { default: 'bounce' } },
-            number: { value: 60, density: { enable: true, area: 800 } },
-            opacity: { value: 0.5 },
+            number: { value: 35, density: { enable: true, area: 800 } },
+            opacity: { value: 0.3 },
             size: { value: { min: 1, max: 3 } },
             shape: { type: 'circle' },
           },
@@ -122,8 +122,8 @@ const Hero = () => {
                 </motion.div>
               </a>
               <div className="flex gap-4">
-                <a href="https://github.com/SaishTiwari" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Github size={24}/></a>
-                <a href="https://www.linkedin.com/in/saish-tiwari-ba119a150/" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Linkedin size={24}/></a>
+                <a href="https://github.com/SaishTiwari" target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Github size={24}/></a>
+                <a href="https://www.linkedin.com/in/saish-tiwari-ba119a150/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Linkedin size={24}/></a>
               </div>
             </motion.div>
           </div>
@@ -155,7 +155,13 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        onClick={() => {
+          const aboutSection = document.querySelector('#about');
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
       >
         <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
           <ChevronDown size={28} className="text-blue-500" />

@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { Github } from 'lucide-react'
+import { useRef, useState, useCallback } from 'react'
+import Particles from 'react-tsparticles'
+import { loadSlim } from 'tsparticles-slim'
+import { Github, ChevronDown } from 'lucide-react'
 
 const Projects = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine)
+  }, [])
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   const personalProjects = [
@@ -13,7 +19,7 @@ const Projects = () => {
       title: 'Event Ticketing API',
       description: 'High-concurrency backend with pessimistic seat-locking and JWT microservices',
       tags: ['Spring Boot', 'JWT', 'PostgreSQL'],
-      github: 'https://github.com/SaishTiwari/event-ticketing-api',
+      github: 'https://github.com/SaishTiwari/event-ticketing-',
       glowColor: '#22c55e',
     },
     {
@@ -71,8 +77,39 @@ const Projects = () => {
   ]
 
   return (
-    <div ref={ref} id="projects" className="min-h-screen py-20 px-4 bg-gray-900 flex flex-col justify-center">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <div ref={ref} id="projects" className="relative min-h-screen py-20 px-4 bg-gray-900 flex flex-col justify-center overflow-hidden">
+      {/* Spider-web style particles background */}
+      <Particles
+        id="projects-particles"
+        init={particlesInit}
+        options={{
+          background: { color: { value: 'transparent' } },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: 'repulse' },
+              onClick: { enable: true, mode: 'push' },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 200, duration: 0.4 },
+              push: { quantity: 4 },
+            },
+          },
+          particles: {
+            color: { value: '#3b82f6' },
+            links: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.15, width: 1 },
+            move: { enable: true, speed: 0.8, outModes: { default: 'bounce' } },
+            number: { value: 35, density: { enable: true, area: 800 } },
+            opacity: { value: 0.3 },
+            size: { value: { min: 1, max: 3 } },
+            shape: { type: 'circle' },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0"
+      />
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -131,6 +168,24 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        onClick={() => {
+          const contactSection = document.querySelector('#contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+      >
+        <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+          <ChevronDown size={28} className="text-blue-500" />
+        </motion.div>
+      </motion.div>
     </div>
   )
 }

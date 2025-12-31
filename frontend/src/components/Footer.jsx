@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-border/50">
+    <footer className="py-4 border-t border-border/50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-gray-400 text-xs">
             © 2025 Saish Tiwari. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm flex items-center gap-2">
+          <p className="text-gray-400 text-xs flex items-center gap-2">
 \          </p>
         </div>
       </div>

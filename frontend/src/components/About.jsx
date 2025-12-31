@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useCallback } from 'react'
 import Particles from 'react-tsparticles'
 import { loadSlim } from 'tsparticles-slim'
+import { ChevronDown } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
@@ -70,10 +71,10 @@ const About = () => {
           },
           particles: {
             color: { value: '#3b82f6' },
-            links: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.3, width: 1 },
+            links: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.15, width: 1 },
             move: { enable: true, speed: 0.8, outModes: { default: 'bounce' } },
-            number: { value: 60, density: { enable: true, area: 800 } },
-            opacity: { value: 0.5 },
+            number: { value: 35, density: { enable: true, area: 800 } },
+            opacity: { value: 0.3 },
             size: { value: { min: 1, max: 3 } },
             shape: { type: 'circle' },
           },
@@ -196,6 +197,24 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        onClick={() => {
+          const skillsSection = document.querySelector('#skills');
+          if (skillsSection) {
+            skillsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+      >
+        <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+          <ChevronDown size={28} className="text-blue-500" />
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
