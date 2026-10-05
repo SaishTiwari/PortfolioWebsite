@@ -4,10 +4,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-gray-400 text-xs">
-            © 2025 Saish Tiwari. All rights reserved.
+            © {new Date().getFullYear()} Saish Tiwari. All rights reserved.
           </p>
           <p className="text-gray-400 text-xs flex items-center gap-2">
-\          </p>
+Backend engineering · Cloud systems
+          </p>
         </div>
       </div>
     </footer>

@@ -6,42 +6,42 @@ import { ChevronDown } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
-  const [activeArea, setActiveArea] = useState('mobile')
+  const [activeArea, setActiveArea] = useState('backend')
 
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine)
   }, [])
 
   const focusAreas = [
-    {
-      id: 'mobile',
-      number: '01',
-      label: 'Native iOS Applications',
-      description: 'Building low-latency iOS experiences with a focus on gesture-driven UI and native performance.',
-      techStack: 'Swift • SwiftUI • Combine • UIKit • MVVM',
-    },
-    {
-      id: 'backend',
-      number: '02',
-      label: 'Backend Systems',
-      description: 'Architecting type-safe microservices with Spring Boot, ensuring data integrity through strict concurrency control.',
-      techStack: 'Java • Spring Boot • JPA • PostgreSQL • REST',
-    },
-    {
-      id: 'cloud',
-      number: '03',
-      label: 'Cloud Architecture',
-      description: 'Designing AWS ecosystems that prioritize high availability, security-first IAM, and cost-efficiency.',
-      techStack: 'AWS • Lambda • RDS • S3 • CloudWatch • Serverless',
-    },
-    {
-      id: 'philosophy',
-      number: '04',
-      label: 'Engineering Philosophy',
-      description: 'Engineering with the belief that code should be as readable as prose and as efficient as hardware.',
-      techStack: 'Clean Code • SOLID • Design Patterns • Agile • CI/CD',
-    },
-  ]
+  {
+    "id": "backend",
+    "number": "01",
+    "label": "Backend Engineering",
+    "description": "Building Spring Boot REST APIs with input validation, clear exception handling, and transactional integrity. My recent work at Yaksha Soft connected application logic with PostgreSQL and MySQL data.",
+    "techStack": "Java • Spring Boot • REST APIs • JPA / Hibernate"
+  },
+  {
+    "id": "cloud",
+    "number": "02",
+    "label": "Cloud & Operations",
+    "description": "Provisioning AWS workloads with least-privilege access and monitoring that makes failures visible. At Adex, I worked with compute, storage, networking, and CloudWatch dashboards and alarms.",
+    "techStack": "AWS • EC2 • S3 • RDS • Lambda • IAM • VPC • CloudWatch"
+  },
+  {
+    "id": "data",
+    "number": "03",
+    "label": "Data & Reliability",
+    "description": "Working from sound relational models to validated data pipelines. I focus on SQL queries, indexing, schema consistency, and checks that catch missing or anomalous data.",
+    "techStack": "PostgreSQL • MySQL • Python • SQL • ETL • 3NF"
+  },
+  {
+    "id": "delivery",
+    "number": "04",
+    "label": "Build, Test, Deliver",
+    "description": "Making services repeatable to run and easier to diagnose through containers, CI/CD, and automated tests. My projects explore service recovery, concurrency, and microservice communication.",
+    "techStack": "Docker • GitHub Actions • Git • Maven • JUnit • Kubernetes"
+  }
+]
 
   const activeContent = focusAreas.find((area) => area.id === activeArea)
 

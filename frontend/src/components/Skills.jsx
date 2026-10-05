@@ -20,65 +20,202 @@ const Skills = () => {
   }, [])
 
   const techStacks = [
-    {
-      title: 'Mobile Engineering',
-      description: 'Crafting high-performance, native iOS experiences with a focus on fluid animations and HIG compliance.',
-      technologies: [
-        { name: 'Swift', icon: 'swift', color: '#F05138' },
-        { name: 'SwiftUI', icon: 'swift', color: '#0066FF' },
-        { name: 'UIKit', icon: 'apple', color: '#000000' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-orange-500/20 via-red-500/10 to-transparent'
-    },
-    {
-      title: 'Backend Architecture',
-      description: 'Building scalable, type-safe microservices and RESTful APIs designed for high concurrency.',
-      technologies: [
-        { name: 'Java', icon: 'openjdk', color: '#007396' },
-        { name: 'Spring Boot', icon: 'springboot', color: '#6DB33F' },
-        { name: 'Python', icon: 'python', color: '#3776AB' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-green-500/20 via-emerald-500/10 to-transparent'
-    },
-    {
-      title: 'Data Persistence',
-      description: 'Architecting optimized schemas for both relational integrity and document-based flexibility.',
-      technologies: [
-        { name: 'MySQL', icon: 'mysql', color: '#4479A1' },
-        { name: 'PostgreSQL', icon: 'postgresql', color: '#4169E1' },
-        { name: 'MongoDB', icon: 'mongodb', color: '#47A248' },
-        { name: 'Firestore', icon: 'firebase', color: '#FFCA28' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-blue-500/20 via-cyan-500/10 to-transparent'
-    },
-    {
-      title: 'Real-time & Auth',
-      description: 'Leveraging serverless ecosystems for instant synchronization and proactive error monitoring.',
-      technologies: [
-        { name: 'Firebase', icon: 'firebase', color: '#FFCA28' },
-        { name: 'Auth', icon: 'firebase', color: '#FFA000' },
-        { name: 'Crashlytics', icon: 'firebase', color: '#FF6F00' },
-      ],
-      span: 'lg:col-span-6',
-      gradient: 'from-yellow-500/20 via-orange-500/10 to-transparent'
-    },
-    {
-      title: 'Cloud & DevOps',
-      description: 'Deploying resilient, containerized environments with automated CI/CD pipelines and infrastructure as code.',
-      technologies: [
-        { name: 'AWS', icon: 'aws-custom', color: '#FF9900' },
-        { name: 'Docker', icon: 'docker', color: '#2496ED' },
-        { name: 'Kubernetes', icon: 'kubernetes', color: '#326CE5' },
-        { name: 'GitHub Actions', icon: 'githubactions', color: '#2088FF' },
-        { name: 'Git', icon: 'git', color: '#F05032' },
-      ],
-      span: 'lg:col-span-12',
-      gradient: 'from-blue-500/20 via-purple-500/10 to-transparent'
-    },
-  ]
+  {
+    "title": "Java & Backend",
+    "description": "REST API development, input validation, exception handling, and transactional service logic.",
+    "technologies": [
+      {
+        "name": "Java",
+        "icon": "openjdk",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Spring Boot",
+        "icon": "springboot",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "REST APIs",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "JPA / Hibernate",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Maven",
+        "icon": "apachemaven",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "JUnit",
+        "icon": "junit5",
+        "color": "#3b82f6"
+      }
+    ],
+    "span": "lg:col-span-6",
+    "gradient": "from-blue-500/20 via-purple-500/10 to-transparent"
+  },
+  {
+    "title": "AWS & Cloud Operations",
+    "description": "Compute, storage, networking, least-privilege access, and operational monitoring.",
+    "technologies": [
+      {
+        "name": "AWS",
+        "icon": "aws-custom",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "EC2",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "S3",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "RDS",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Lambda",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "IAM",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "VPC",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "CloudWatch",
+        "icon": null,
+        "color": "#3b82f6"
+      }
+    ],
+    "span": "lg:col-span-6",
+    "gradient": "from-blue-500/20 via-purple-500/10 to-transparent"
+  },
+  {
+    "title": "SQL & Data Integrity",
+    "description": "Query and index optimization, relational modeling, and automated checks for consistent data.",
+    "technologies": [
+      {
+        "name": "PostgreSQL",
+        "icon": "postgresql",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "MySQL",
+        "icon": "mysql",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "SQL",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "3NF Modeling",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Data Validation",
+        "icon": null,
+        "color": "#3b82f6"
+      }
+    ],
+    "span": "lg:col-span-6",
+    "gradient": "from-blue-500/20 via-purple-500/10 to-transparent"
+  },
+  {
+    "title": "Delivery & Developer Tools",
+    "description": "Containerized services and repeatable integration workflows, with Kubernetes project experience.",
+    "technologies": [
+      {
+        "name": "Docker",
+        "icon": "docker",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "kubernetes",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "GitHub Actions",
+        "icon": "githubactions",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "CI/CD",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Git",
+        "icon": "git",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Bash",
+        "icon": null,
+        "color": "#3b82f6"
+      }
+    ],
+    "span": "lg:col-span-6",
+    "gradient": "from-blue-500/20 via-purple-500/10 to-transparent"
+  },
+  {
+    "title": "Data Engineering & Analytics",
+    "description": "Reproducible ingestion and transformation, documented schemas, and reporting that explains the data.",
+    "technologies": [
+      {
+        "name": "Python",
+        "icon": "python",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "R",
+        "icon": "r",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "ETL / ELT",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Source-to-Target Mapping",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Data Dictionaries",
+        "icon": null,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Power BI",
+        "icon": null,
+        "color": "#3b82f6"
+      }
+    ],
+    "span": "lg:col-span-12",
+    "gradient": "from-blue-500/20 via-purple-500/10 to-transparent"
+  }
+]
 
   return (
     <section ref={ref} id="skills" className="relative py-20 px-4 bg-gray-900 text-white overflow-hidden">
@@ -126,7 +263,7 @@ const Skills = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Tools & Technologies</h2>
           <p className="text-gray-400 text-lg">
-            My arsenal of languages, frameworks, and tools that I use to build exceptional digital experiences
+            The tools I use to build backend services, operate AWS workloads, and keep data reliable.
           </p>
         </motion.div>
 
@@ -236,14 +373,14 @@ const TechCard = ({ stack, index, isInView }) => {
               >
                 {tech.icon === 'aws-custom' ? (
                   <AWSLogo className="w-4 h-4 text-white group-hover/tech:scale-110 transition-transform" />
-                ) : (
+                ) : tech.icon ? (
                   <img
                     src={`https://cdn.simpleicons.org/${tech.icon}`}
                     alt={tech.name}
                     className="w-4 h-4 group-hover/tech:scale-110 transition-transform"
                     style={{ filter: 'brightness(0) invert(1)' }}
                   />
-                )}
+                ) : null}
                 <span className="text-xs font-medium text-gray-300 group-hover/tech:text-white transition-colors">
                   {tech.name}
                 </span>

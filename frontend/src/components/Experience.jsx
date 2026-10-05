@@ -20,42 +20,81 @@ const Experience = () => {
   }, [])
 
   const experiences = [
-    {
-      title: 'Junior iOS Developer',
-      company: 'Coredreams Innovation',
-      period: 'November 2024 – April 2025',
-      description: [
-        'Architected a native Ride Booking System using SwiftUI with HIG-compliant interaction patterns',
-        'Engineered identity management and real-time synchronization using Firebase Auth and Firestore',
-        'Integrated Google Maps SDK with custom route optimization and background location handling',
-      ],
-      technologies: [
-        { name: 'Swift', icon: 'https://cdn.simpleicons.org/swift/F05138' },
-        { name: 'SwiftUI', icon: 'https://cdn.simpleicons.org/swift/0066FF' },
-        { name: 'Firebase', icon: 'https://cdn.simpleicons.org/firebase/FFCA28' },
-        { name: 'TestFlight', icon: 'https://cdn.simpleicons.org/ios/147EFB' },
-        { name: 'Xcode', icon: 'https://cdn.simpleicons.org/xcode/147EFB' },
-        { name: 'Jira', icon: 'https://cdn.simpleicons.org/jira/0052CC' },
-      ],
-    },
-    {
-      title: 'Cloud Engineering Apprentice',
-      company: 'Adex International',
-      period: 'April 2025 – June 2025',
-      description: [
-        'Provisioned and managed scalable cloud infrastructure using AWS (EC2, S3, Lambda, RDS)',
-        'Designed fault-tolerant architectures with IAM and security best practices',
-      ],
-      technologies: [
-        { name: 'AWS', icon: 'https://cdn.simpleicons.org/amazonaws/FF9900' },
-        { name: 'EC2', icon: 'https://cdn.simpleicons.org/serverless/FF9900' },
-        { name: 'Lambda', icon: 'https://cdn.simpleicons.org/serverless/FF9900' },
-        { name: 'RDS', icon: 'https://cdn.simpleicons.org/mysql/527FFF' },
-        { name: 'S3', icon: 'https://cdn.simpleicons.org/databricks/569A31' },
-        { name: 'IAM', icon: 'https://cdn.simpleicons.org/letsencrypt/DD344C' },
-      ],
-    },
-  ]
+  {
+    "title": "Java Backend Developer",
+    "company": "Yaksha Soft",
+    "period": "July 2025 – February 2026",
+    "description": [
+      "Developed and maintained Spring Boot REST APIs for processing and validating relational data in PostgreSQL and MySQL.",
+      "Optimized SQL queries, indexes, and connection pools to improve data retrieval and application performance.",
+      "Implemented input validation and exception handling to protect transactional integrity and catch ingestion anomalies.",
+      "Containerized services with Docker and supported GitHub Actions integration and deployment workflows."
+    ],
+    "technologies": [
+      {
+        "name": "Java",
+        "icon": "https://cdn.simpleicons.org/openjdk"
+      },
+      {
+        "name": "Spring Boot",
+        "icon": "https://cdn.simpleicons.org/springboot"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "https://cdn.simpleicons.org/postgresql"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://cdn.simpleicons.org/mysql"
+      },
+      {
+        "name": "Docker",
+        "icon": "https://cdn.simpleicons.org/docker"
+      },
+      {
+        "name": "GitHub Actions",
+        "icon": "https://cdn.simpleicons.org/githubactions"
+      }
+    ]
+  },
+  {
+    "title": "Cloud Engineering Apprentice",
+    "company": "Adex International",
+    "period": "April 2025 – June 2025",
+    "description": [
+      "Provisioned S3, Lambda, RDS, and EC2 resources for storage and cloud processing workloads.",
+      "Configured IAM roles, VPC subnets, and security groups for least-privilege access.",
+      "Built CloudWatch dashboards, custom metrics, and alarms to monitor system health and workload reliability.",
+      "Applied S3 lifecycle policies and resource automation scripts to manage storage and operational costs."
+    ],
+    "technologies": [
+      {
+        "name": "AWS",
+        "icon": "https://cdn.simpleicons.org/serverless/FF9900"
+      },
+      {
+        "name": "EC2",
+        "icon": "https://cdn.simpleicons.org/serverless/FF9900"
+      },
+      {
+        "name": "S3",
+        "icon": "https://cdn.simpleicons.org/serverless/FF9900"
+      },
+      {
+        "name": "RDS",
+        "icon": "https://cdn.simpleicons.org/serverless/FF9900"
+      },
+      {
+        "name": "Lambda",
+        "icon": "https://cdn.simpleicons.org/serverless/FF9900"
+      },
+      {
+        "name": "CloudWatch",
+        "icon": "https://cdn.simpleicons.org/serverless/FF9900"
+      }
+    ]
+  }
+]
 
   return (
     <section ref={ref} id="experience" className="relative min-h-screen py-20 px-4 bg-gray-900 overflow-hidden">

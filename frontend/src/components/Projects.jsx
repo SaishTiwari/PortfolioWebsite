@@ -15,66 +15,80 @@ const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   const personalProjects = [
-    {
-      title: 'Event Ticketing API',
-      description: 'High-concurrency backend with pessimistic seat-locking and JWT microservices',
-      tags: ['Spring Boot', 'JWT', 'PostgreSQL'],
-      github: 'https://github.com/SaishTiwari/event-ticketing-',
-      glowColor: '#22c55e',
-    },
-    {
-      title: 'Karya',
-      description: 'Modern task-orchestration engine built with SwiftUI and MVVM pattern',
-      tags: ['SwiftUI', 'MVVM', 'iOS'],
-      github: 'https://github.com/SaishTiwari/karya',
-      glowColor: '#3b82f6',
-    },
-    {
-      title: 'Product Management System',
-      description: 'Robust CRUD ecosystem with enterprise-grade JPA and REST standards',
-      tags: ['Spring Boot', 'JPA', 'MySQL'],
-      github: 'https://github.com/SaishTiwari/product-management',
-      glowColor: '#22c55e',
-    },
-    {
-      title: 'DSA Logic Lab',
-      description: 'Optimized algorithmic solutions focusing on time-complexity',
-      tags: ['Algorithms', 'Java'],
-      github: 'https://github.com/SaishTiwari/dsa-logic-lab',
-      glowColor: '#a855f7',
-    },
-  ]
+  {
+    "title": "Phoenix — Self-Healing Framework",
+    "description": "A Java framework exploring fault recovery in distributed applications.",
+    "details": [
+      "Service registration, discovery, heartbeat telemetry, and active health checks.",
+      "Configuration-driven recovery policies for retries, exponential backoff, and circuit breakers.",
+      "Structured event timelines and failure-injection scenarios with JUnit."
+    ],
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "JUnit",
+      "Docker"
+    ],
+    "status": "Resume project · Source private",
+    "glowColor": "#3b82f6"
+  },
+  {
+    "title": "Event Ticketing API",
+    "description": "A booking backend focused on preventing competing requests from reserving the same seat.",
+    "details": [
+      "Pessimistic locking and temporary seat reservations protect booking consistency.",
+      "JWT authentication, role-based access, and a simulated payment flow."
+    ],
+    "tags": [
+      "Spring Boot",
+      "PostgreSQL",
+      "JPA",
+      "JWT"
+    ],
+    "github": "https://github.com/SaishTiwari/Event-Ticketing-",
+    "status": "Backend project",
+    "glowColor": "#22c55e"
+  }
+]
 
   const academicProjects = [
-    {
-      title: 'Bojh (On-Demand Logistics)',
-      description: 'Cross-platform fleet management with real-time vehicle booking',
-      tags: ['Flutter', 'Node.js', 'MongoDB'],
-      github: 'https://github.com/SaishTiwari/bojh',
-      glowColor: '#06b6d4',
-    },
-    {
-      title: 'E-Pustakalaya',
-      description: 'Library governance system with role-based access control',
-      tags: ['JSP', 'Servlets', 'MySQL'],
-      github: 'https://github.com/SaishTiwari/e-pustakalaya',
-      glowColor: '#f97316',
-    },
-    {
-      title: 'Fixmandu',
-      description: 'Home-service marketplace with JavaFX desktop-native performance',
-      tags: ['JavaFX', 'MySQL'],
-      github: 'https://github.com/SaishTiwari/fixmandu',
-      glowColor: '#ef4444',
-    },
-    {
-      title: 'Taxi Booking System',
-      description: 'Event-driven Python/Tkinter driver-rider dispatch logic',
-      tags: ['Python', 'Tkinter'],
-      github: 'https://github.com/SaishTiwari/taxi-booking',
-      glowColor: '#eab308',
-    },
-  ]
+  {
+    "title": "Cloud Dine",
+    "description": "A food-ordering backend split into independently running authentication, menu, and order services.",
+    "details": [
+      "Spring Cloud Gateway routes requests to services with separate PostgreSQL databases.",
+      "Docker and local Kubernetes deployment with Secrets, ConfigMaps, and service discovery.",
+      "Ongoing work: observability, ingress, and deployment hardening."
+    ],
+    "tags": [
+      "Java 21",
+      "Spring Boot",
+      "Docker",
+      "Kubernetes"
+    ],
+    "github": "https://github.com/SaishTiwari/cloud-dine",
+    "status": "Microservices · In progress",
+    "glowColor": "#a855f7"
+  },
+  {
+    "title": "Regional Socioeconomic Data Pipeline",
+    "description": "An ongoing ETL and analytics project bringing public regional datasets into a consistent relational model.",
+    "details": [
+      "Python ingestion, cleaning, and validation with a normalized PostgreSQL schema.",
+      "Data dictionaries, source-to-target mappings, and SQL checks for missing values and anomalies.",
+      "R and Power BI reports for regional comparisons and metric trends."
+    ],
+    "tags": [
+      "Python",
+      "PostgreSQL",
+      "SQL",
+      "R",
+      "Power BI"
+    ],
+    "status": "Resume project · In progress",
+    "glowColor": "#06b6d4"
+  }
+]
 
   return (
     <div ref={ref} id="projects" className="relative min-h-screen py-20 px-4 bg-gray-900 flex flex-col justify-center overflow-hidden">
@@ -119,11 +133,12 @@ const Projects = () => {
         >
           <span className="text-blue-500 font-mono text-sm tracking-wider">PORTFOLIO</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Featured Projects</h2>
+          <p className="text-gray-400 text-lg">Service reliability, transactional APIs, and cloud-native delivery — with the implementation details behind each project.</p>
         
         </motion.div>
 
         {/* Central Axis Layout */}
-        <div className="relative max-h-none md:max-h-[85vh] flex items-center">
+        <div className="relative flex items-center">
           {/* Central Vertical Line - Hidden on mobile */}
           <motion.div
             initial={{ scaleY: 0 }}
@@ -226,29 +241,26 @@ const ProjectCard = ({ project, index, side, isInView, isHovered, onHover, onLea
           {/* Content */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2 mb-2">
-              <h3 className="text-base font-bold text-white truncate">
+              <h3 className="text-lg font-bold text-white leading-snug">
                 {project.title}
               </h3>
-              <a
+              {project.github && <a
+                aria-label={`View ${project.title} on GitHub`}
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-shrink-0 text-gray-400 hover:text-white transition-colors"
               >
                 <Github size={16} />
-              </a>
+              </a>}
             </div>
 
-            <motion.p
-              animate={{
-                height: isHovered ? 'auto' : '1.25rem',
-              }}
-              transition={{ duration: 0.3 }}
-              className="text-xs text-gray-400 leading-relaxed overflow-hidden mb-3"
-            >
+            <p className="text-xs text-blue-400 mb-3">{project.status}</p>
+            <motion.p className="text-sm text-gray-300 leading-relaxed mb-3">
               {project.description}
             </motion.p>
 
+            <ul className="list-disc pl-4 space-y-2 text-sm text-gray-400 mb-5">{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
             {/* Tech Badges */}
             <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag, i) => (

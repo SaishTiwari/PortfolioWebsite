@@ -37,6 +37,7 @@ const Certifications = () => {
       logo: 'https://cdn.simpleicons.org/cisco/049CA1',
       gradient: 'from-blue-500/20 via-cyan-500/10 to-transparent'
     },
+    { title: 'JPMorgan Chase Software Engineering Job Simulation', issuer: 'Forage', date: 'Completed', gradient: 'from-blue-500/20 via-cyan-500/10 to-transparent', simulation: true },
   ]
 
   return (
@@ -83,7 +84,7 @@ const Certifications = () => {
             <Award size={16} />
             CERTIFICATIONS
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Industry Recognition</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Certifications & Training</h2>
           <p className="text-gray-400 text-lg">
             Validated expertise in cloud architecture and network engineering
           </p>
@@ -181,13 +182,13 @@ const CertificationCard = ({ cert, index, isInView }) => {
           <div className="flex items-start justify-between mb-4">
             {cert.logo === 'aws-custom' ? (
               <AWSLogo className="w-14 h-14 text-[#FF9900]" />
-            ) : (
+            ) : cert.logo ? (
               <img
                 src={cert.logo}
                 alt={cert.issuer}
                 className="w-14 h-14 object-contain"
               />
-            )}
+            ) : <Award className="w-14 h-14 text-blue-400" />}
             {/* Verified Badge */}
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
@@ -195,7 +196,7 @@ const CertificationCard = ({ cert, index, isInView }) => {
               className="flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 rounded-full px-3 py-1.5"
             >
               <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-green-400 text-sm font-medium">Verified</span>
+              <span className="text-green-400 text-sm font-medium">{cert.simulation ? 'Job simulation' : 'Certification'}</span>
             </motion.div>
           </div>
 
@@ -211,7 +212,7 @@ const CertificationCard = ({ cert, index, isInView }) => {
 
           {/* Date */}
           <p className="text-white/50 text-sm mb-4">
-            Issued: {cert.date}
+            {cert.simulation ? 'Status: ' : 'Issued: '}{cert.date}
             {cert.expirationDate && <span className="block mt-1">Valid until: {cert.expirationDate}</span>}
           </p>
 

@@ -43,7 +43,7 @@ const Contact = () => {
 
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
+    } catch {
       // Error logging removed for production
       setSubmitStatus('error')
     } finally {
@@ -54,8 +54,8 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'tiwarisaish381@gmail.com', href: 'mailto:tiwarisaish381@gmail.com' },
-    { icon: Phone, label: 'Inquiries', value: '+977-9861938401', href: 'tel:+9779861938401' },
-    { icon: MapPin, label: 'Location', value: 'Kathmandu, Nepal', subtext: 'Available for Remote/Global Collaboration' },
+    { icon: Phone, label: 'Inquiries', value: '(571) 639-8956', href: 'tel:+15716398956' },
+    { icon: MapPin, label: 'Location', value: 'Chantilly, Virginia', subtext: 'Open to backend and cloud engineering opportunities' },
   ]
 
   return (
@@ -106,7 +106,7 @@ const Contact = () => {
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed">
                 Currently open to opportunities in{' '}
-                <span className="text-white font-medium">iOS Development</span>,{' '}
+                <span className="text-white font-medium">Java Backend Development</span>,{' '}
                 <span className="text-white font-medium">Backend Architecture</span>, and{' '}
                 <span className="text-white font-medium">Cloud Systems</span>. Whether you have a specific project in mind or just want to talk tech, my inbox is always open.
               </p>
@@ -158,7 +158,7 @@ const Contact = () => {
                   <span className="text-sm font-medium">GitHub</span>
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/saish-tiwari-ba119a150/" 
+                  href="https://www.linkedin.com/in/saishtiwari/"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-300 group"

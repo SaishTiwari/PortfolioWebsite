@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import { motion } from 'framer-motion';
-import { MapPin, Github, Linkedin, ChevronDown, Smartphone, Server, Cloud, Download } from 'lucide-react';
+import { MapPin, Github, Linkedin, ChevronDown, Database, Server, Cloud, Download } from 'lucide-react';
 import HeroImage from "../assets/Ai_SaishProfile.jpg";
 
 const Hero = () => {
@@ -11,13 +11,13 @@ const Hero = () => {
   }, []);
 
   const highlights = [
-    { icon: <Smartphone size={24} />, title: 'iOS Development', description: 'Crafting premium mobile experiences with Swift & SwiftUI' },
-    { icon: <Server size={24} />, title: 'Backend Architecture', description: 'Scalable systems using Java, Spring Boot & MySQL' },
+    { icon: <Database size={24} />, title: 'Reliable Data', description: 'PostgreSQL, MySQL, query optimization & data validation' },
+    { icon: <Server size={24} />, title: 'Java Backend', description: 'Spring Boot REST APIs, transactional integrity & service reliability' },
     { icon: <Cloud size={24} />, title: 'Cloud Engineering', description: 'AWS Certified Solutions Architect – Cloud Infrastructure' },
   ];
 
   return (
-    <div id="home" className="min-h-screen flex items-center justify-center px-4 py-20 bg-gray-900">
+    <div id="home" className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-gray-900">
       {/* Spider-web style particles background */}
       <Particles
         id="tsparticles"
@@ -61,7 +61,7 @@ const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 mt-8"
             >
               <MapPin size={16} className="text-blue-500" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-blue-400">Kathmandu, Nepal</span>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-blue-400">Chantilly, Virginia</span>
             </motion.div>
 
            <motion.h1
@@ -78,9 +78,10 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-400 mb-12 font-light max-w-2xl"
             >
-              Software Engineer
+              Backend &amp; Cloud Engineer
             </motion.p>
 
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl mb-8">I build Java and Spring Boot services, work with relational data, and deploy workloads on AWS. AWS Certified Solutions Architect – Associate and software engineering student, graduating January 2027.</p>
             {/* Glassmorphic Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
               {highlights.map((item, index) => (
@@ -122,8 +123,8 @@ const Hero = () => {
                 </motion.div>
               </a>
               <div className="flex gap-4">
-                <a href="https://github.com/SaishTiwari" target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Github size={24}/></a>
-                <a href="https://www.linkedin.com/in/saish-tiwari-ba119a150/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Linkedin size={24}/></a>
+                <a aria-label="Saish Tiwari on GitHub" href="https://github.com/SaishTiwari" target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Github size={24}/></a>
+                <a aria-label="Saish Tiwari on LinkedIn" href="https://www.linkedin.com/in/saishtiwari/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:text-blue-500 hover:border-blue-500/30 transition-all"><Linkedin size={24}/></a>
               </div>
             </motion.div>
           </div>

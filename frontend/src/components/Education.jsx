@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion'
 import { useRef, useCallback } from 'react'
 import Particles from 'react-tsparticles'
 import { loadSlim } from 'tsparticles-slim'
-import { GraduationCap, School, ChevronDown } from 'lucide-react'
+import { GraduationCap, ChevronDown } from 'lucide-react'
 
 const Education = () => {
   const ref = useRef(null)
@@ -17,19 +17,10 @@ const Education = () => {
     {
       degree: 'BSc. Software Engineering',
       institution: 'University of Bedfordshire',
-      period: 'January 2024 - Present',
-      description: 'Focusing on the architectural principles of scalable system design, distributed cloud environments, and advanced computational logic.',
+      period: 'Expected graduation: January 2027',
+      description: 'Currently enrolled in the Bachelor of Science in Software Engineering program. Building a foundation in software design, data systems, and distributed applications.',
       inProgress: true,
       icon: <GraduationCap size={32} />
-    },
-    {
-      degree: 'Nepal Education Board & Secondary Education Examination',
-      institution: 'Budhanilkantha School',
-      location: 'Kathmandu, Nepal',
-      period: 'April 2014 - July 2022',
-      description: 'Foundational studies in higher secondary education with a focus on science, technology and mathematics.',
-      inProgress: false,
-      icon: <School size={32} />
     },
   ]
 
@@ -83,7 +74,7 @@ const Education = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {education.map((edu, index) => (
             <motion.div
               key={index}
